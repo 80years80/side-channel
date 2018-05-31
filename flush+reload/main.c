@@ -51,14 +51,8 @@ int get_random() {
   random_bytes[0] = '\0';
   while(strlen(random_bytes) != RAND_SIZE) {
     fread(random_bytes, RAND_SIZE, 1, fp);
-    /*
-    for(int i=0; i<RAND_SIZE; ++i) {
-      random_bytes[i] = (random_bytes[i] & 0x3f);
-    }
-    */
     random_bytes[RAND_SIZE] = '\0';
   }
-
   fclose(fp);
 }
 
@@ -74,7 +68,6 @@ int main() {
     printf("Reading random failed\n");
     exit(-1);
   }
-  //printf("Random value: %s\n", random_bytes);
   printf("Random in hex: ");
   print_in_hex(random_bytes, RAND_SIZE);
 
@@ -90,8 +83,6 @@ int main() {
     operate(i);
     reload(&l1_cache);
   }
-  //printf("Encoded in hex: ");
-  //print_in_hex(encoded_bytes, 2);
 
   your_answer(answer);
   printf("Answer in hex: ");
