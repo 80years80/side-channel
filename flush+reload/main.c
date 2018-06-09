@@ -93,4 +93,11 @@ int main() {
   else {
     printf("Incorrect!\n");
   }
+  int correct = 0;
+  for(int i=0; i<16; ++i) {
+    int v1 = (answer[i/8] >> (i%8)) & 1;
+    int v2 = (random_bytes[i/8] >> (i%8)) & 1;
+    if(v1 == v2) ++correct;
+  }
+  printf("Score: %d/16 = %f\n", correct, correct/16.0*100);
 }
