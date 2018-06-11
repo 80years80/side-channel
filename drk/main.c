@@ -59,10 +59,15 @@ int main() {
 
   printf("\n\nYour DrK attack starts!\n");
 
+  // Please detect the start address...
   kaddr_t kernel_addrs = your_answer_kernel_addrs();
+  printf("Kernel addr start: %p\n", (void*)kernel_addrs.base);
+
+  /*
   kaddr_t kernel_exec_addrs = your_answer_kernel_executables(kernel_addrs);
   printf("Kernel addr start: %p ends: %p\n", \
           (void*)kernel_addrs.base, (void*)kernel_addrs.bound);
   printf("Kernel executable addr start: %p ends: %p\n", \
           (void*)kernel_exec_addrs.base, (void*)kernel_exec_addrs.bound);
+  */
 }
