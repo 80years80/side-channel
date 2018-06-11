@@ -99,5 +99,14 @@ int main() {
     int v2 = (random_bytes[i/8] >> (i%8)) & 1;
     if(v1 == v2) ++correct;
   }
-  printf("Score: %d/16 = %f\n", correct, correct/16.0*100);
+
+  double adj_correct = correct-8;
+  if(adj_correct < 0)
+    adj_correct = 0;
+
+  double score = (adj_correct*adj_correct/64.0) * 100;
+  if(score < 0) {
+    score = 0;
+  }
+  printf("Score: %d/16 = %f\n", correct, score);
 }
