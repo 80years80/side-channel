@@ -36,8 +36,8 @@ void execute_address(void* ptr) {
 uint64_t probe_an_address_via_write(void *ptr) {
 
   uint64_t min_time = (uint64_t)(-1);
+  usleep(10);
   char *c_ptr = (char*)ptr;
-
   // run for PROBE_TIMES times for better accuracy
   for(int i=0; i<PROBE_TIMES; ++i) {
     uint64_t start, end;
@@ -63,7 +63,7 @@ uint64_t probe_an_address_via_write(void *ptr) {
 uint64_t probe_an_address_via_exec(void *ptr) {
 
   uint64_t min_time = (uint64_t)(-1);
-
+  usleep(10);
   // run for PROBE_TIMES times for better accuracy
   for(int i=0; i<PROBE_TIMES; ++i) {
     uint64_t start, end;
