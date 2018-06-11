@@ -28,6 +28,7 @@ kaddr_t your_answer_kernel_addrs() {
 kaddr_t your_answer_kernel_executables(kaddr_t kernel_area) {
   kaddr_t to_be_returned = {0, 0};
   // TODO: get kernel ASLR slide only for the executable areas.
-  
+  // THIS IS OPTIONAL.
+
   return to_be_returned;
 }
